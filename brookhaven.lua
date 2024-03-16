@@ -21,7 +21,7 @@ if activationCheck() then
     while activationCheck() and task.wait() do
         for i, v in ipairs(Easter.RobloxEggHunt:GetChildren()) do
             if v.Name == "Eggy" and v.Transparency == 0 then
-                HRP.CFrame = CFrame.new(v.Position + Vector3.new(0, 1, 0))
+                HRP.CFrame = CFrame.new(v.Position + Vector3.new(0, -2, 0))
             end
         end
     end
