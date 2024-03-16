@@ -1,0 +1,10 @@
+local LocalPlayer = game.Players.LocalPlayer
+local HRP = LocalPlayer.Character.HumanoidRootPart
+while task.wait() do
+    for i, v in ipairs(workspace.orbFolder.City:GetChildren()) do
+        if v:FindFirstChild("outerOrb") then
+            C = v:FindFirstChild("outerOrb")
+            HRP.CFrame = CFrame.new(C.Position)
+        end
+    end
+end
