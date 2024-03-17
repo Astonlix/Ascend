@@ -1,10 +1,44 @@
 local LocalPlayer = game.Players.LocalPlayer
 local HRP = LocalPlayer.Character.HumanoidRootPart
-while task.wait() do
-    for i, v in ipairs(workspace.orbFolder.City:GetChildren()) do
-        if v:FindFirstChild("outerOrb") then
-            C = v:FindFirstChild("outerOrb")
-            HRP.CFrame = CFrame.new(C.Position)
+
+getgenv().Toggled = true
+
+task.spawn(function()
+    while getgenv().Toggled and task.wait() do
+        for i, v in ipairs(workspace.Hoops:GetChildren()) do
+            firetouchtransmitter(v, HRP, 0)
+            firetouchtransmitter(v, HRP, 1)
         end
     end
-end
+end)
+task.spawn(function()
+    while getgenv().Toggled and task.wait() do
+        for i, v in ipairs(workspace.orbFolder:GetDescendants()) do
+            if v:FindFirstChild("outerOrb") then
+                local C = v:FindFirstChild("outerOrb")
+                firetouchtransmitter(C, HRP, 1)
+            end
+        end
+    end
+end)
+task.spawn(function()
+    while getgenv().Toggled and task.wait() do
+        for i, v in ipairs(workspace.rewardChests.rewardChest:GetDescendants()) do
+            if v:FindFirstChild("circleInner") then
+                local b = v:FindFirstChild("circleInner")
+                firetouchtransmitter(b, HRP, 0)
+                firetouchtransmitter(b, HRP, 1)
+            end
+        end
+    end
+end)
+task.spawn(function()
+    while getgenv().Toggled and task.wait() do
+        for i, v in ipairs(workspace.orbFolder:GetDescendants()) do
+            if v:FindFirstChild("outerGem") then
+                local a = v:FindFirstChild("outerGem")
+                firetouchtransmitter(a, HRP, 1)
+            end
+        end
+    end
+end)
