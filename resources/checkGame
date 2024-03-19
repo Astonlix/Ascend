@@ -1,0 +1,5 @@
+if game.PlaceId == 189707 then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Astonlix/Ascend/main/games/Natural%20Disaster%20Survival"))()
+else
+  print("Unsupported")
+end
