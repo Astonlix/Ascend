@@ -1,0 +1,35 @@
+if game.PlaceId == 189707 then
+    if not getgenv().NaturalDisasterSurvival then return end
+
+    local localPlayer = game:GetService("Players").LocalPlayer
+    local Workspace = game:GetService("Workspace")
+    local clockFolder = Workspace:WaitForChild("Clocks")
+    local model = Workspace["Event Station"]["Unfinished Character"].Character1 or Workspace["Event Station"]["Finished Character"].Character3.Model or Workspace["Event Station"]["Unfinished Character"].Machine
+    local hitbox = Workspace["Event Station"].Hitbox
+
+    local clock3 = nil
+    if model:FindFirstChild("Clock3") then
+            clock3 = model:FindFirstChild("Clock3")
+    end
+
+    repeat task.wait()
+        if not clock3 then
+            for _, v in pairs(clockFolder:GetChildren()) do
+                repeat task.wait()
+                    pcall(function()
+                        local claimEvent = v:FindFirstChildOfClass("RemoteEvent")
+                        claimEvent:FireServer()
+                    end)
+                until v.Parent == Workspace[localPlayer.Name] or not getgenv().NaturalDisasterSurvival
+
+                if v.Parent == Workspace[localPlayer.Name] then
+                    repeat task.wait()
+                        firetouchinterest(localPlayer.Character.HumanoidRootPart, hitbox, 0)
+                        firetouchinterest(localPlayer.Character.HumanoidRootPart, hitbox, 1)
+                    until v.Parent == nil  or not getgenv().NaturalDisasterSurvival
+                end
+            end
+        end
+    until not getgenv().NaturalDisasterSurvival or clock3
+end
+
