@@ -1,3 +1,5 @@
+getgenv().NaturalDisasterSurvival = not getgenv().NaturalDisasterSurvival
+
 if game.PlaceId == 189707 then
     if not getgenv().NaturalDisasterSurvival then return end
 
