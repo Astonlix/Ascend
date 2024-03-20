@@ -1,4 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Tab = Window:CreateTab("Main", 16793386916) -- Title, Image
 local Label = Tab:CreateLabel("❗ Make sure you are in a pair before you toggle.")
 
 getgenv().CarryAFriend = not getgenv().CarryAFriend
