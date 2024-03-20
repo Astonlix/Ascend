@@ -1,6 +1,6 @@
 getgenv().CarryAFriend = not getgenv().CarryAFriend
 
-if not getgenv().On then return end
+if not getgenv().CarryAFriend then return end
 
 if (not game:IsLoaded()) then
     game.Loaded:Wait()
