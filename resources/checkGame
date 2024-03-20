@@ -1,5 +1,7 @@
 if game.PlaceId == 189707 then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Astonlix/Ascend/main/games/Natural%20Disaster%20Survival"))()
+elseif game.PlaceId == 14448662003 or 15520513462 then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Astonlix/Ascend/main/games/Carry%20A%20Friend!.lua"))()
 else
   print("Unsupported")
 end
