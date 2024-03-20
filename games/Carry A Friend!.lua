@@ -1,4 +1,4 @@
-getgenv().On = not getgenv().On
+getgenv().CarryAFriend = not getgenv().CarryAFriend
 
 if not getgenv().On then return end
 
@@ -31,9 +31,9 @@ elseif game.PlaceId == 15520513462 then
 
                     proximityPrompt = egg:FindFirstChildOfClass("ProximityPrompt")
                     fireproximityprompt(proximityPrompt)
-                until egg.Parent == eggStorage or not getgenv().On
+                until egg.Parent == eggStorage or not getgenv().CarryAFriend
             end
-        until #eggLocations:GetChildren() == 0 or #eggStorage:GetChildren() == 10 or not getgenv().On
+        until #eggLocations:GetChildren() == 0 or #eggStorage:GetChildren() == 10 or not getgenv().CarryAFriend
         if #eggLocations:GetChildren() == 0 then
             humanoidRP.CFrame = CFrame.new(teleportFinish)
         end
