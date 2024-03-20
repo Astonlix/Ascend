@@ -1,3 +1,5 @@
+local Label = Tab:CreateLabel("❗ Make sure you are in a pair before you toggle.")
+
 getgenv().CarryAFriend = not getgenv().CarryAFriend
 
 if not getgenv().CarryAFriend then return end
